@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Liblary</title>
+	<link type="text/css" rel="stylesheet" href="../comm/css/common.css" />
+	<script type="text/javascript" src="../lib/js/jquery/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="../comm/js/hgnb.js"></script>
+    <style>
+	      .guide_line {display:block; border:dashed 1px #ccc; margin:20px 0; float:left; width:100%;}
+	      .guide_page .container {width:100%; padding:50px; box-sizing:border-box; overflow-y:auto; margin-bottom:20px; height:calc(100% - 89px);}
+	      .guide_header {background:#323a47; padding:30px; box-sizing:border-box; }
+	      .guide_header h1 {font-size:25px; font-weight:normal; color:#fff;}
+	      .guide_page h2 {font-size:18px; letter-spacing:-0.05em; margin:10px 0; color:#666; display:inline-block; width:100%;}
+	      .guide_page textarea { display:block; width:100%; height:280px}
+	      .popup_st01 {float:left;}
+	      .guide_page .container p{ font-weight:bold; margin:10px 0px 10px 0px;}
+	      .guide_page .container strong{ display:inline-block; color:red; margin-top:10px; margin-bottom:10px; width:100%;}
+	      
+	      
+	      #gnb { position:relative;}
+	      .menuStyle{ display:inline-block; margin:5px; }
+	      .testMe { width:200px; height:50px; display:inline-block; text-align:center; background:#ff0000;}
+    </style>
+    <script>
+    $( document ).ready(function()
+    {
+    	
+    	//-------------------------------------------------------------------------------------------------
+    	//Feature			| Chrome	| Firefox (Gecko)	| Internet Explorer	| Opera	| Safari (WebKit) |
+		//Basic support		| 6			| 7.0 (7.0)			| 9					| 15.0	| 8				  |
+		//-------------------------------------------------------------------------------------------------
+		
+		//memory - methods
+		//performance.mark();		//
+		//performance.now();		//
+		
+		var menuList = [{ name:"Monitoring0" , url:"#"},
+				 { name:"Device Connectivity1" , url:"#"
+	 				,depth:[{ name:"- Machine/Device/Sensor Management10" , url:"#"},
+							{ name:"- Unit Management11"					, url:"#"},
+							{ name:"- Sensor Monitoring12"				, url:"#"},
+							{ name:"- Sensor History Management13"		, url:"#"},
+							{ name:"- Protocol Management14"				, url:"#"}]
+	 			} ,
+                {name:"Analytics Model2", url:"#"
+                	,depth:[
+							{ name:"- Analytics Model Management20"	, url:"#"},
+							{ name:"- Analytics Model Deployment21"	, url:"#"}]
+	 			},
+                {name:"Alarm & Event3", url:"#"
+                	,depth:[
+							{ name:"- Uncleared Alarm List30"	, url:"#"},
+							{ name:"- Alarm/Event History31"	, url:"#"
+								,depth:[
+										{ name:"+ Alarm History310"	, url:"#"},
+										{ name:"+ Event History311"	, url:"#" , depth:[
+										      										{ name:"++ Alarm History3110"	, url:"#"},
+										    										{ name:"++ Event History3111"	, url:"#" , depth:[
+																																	{ name:"+++ Alarm History31110"	, url:"#"},
+																																	{ name:"+++ Alarm History31111"	, url:"#"},
+										    										                             	                   ]}]
+										},
+										{ name:"+ Alarm History312"	, url:"#"}]
+							},
+							{ name:"- Alarm Management32"		, url:"#"
+								,depth:[
+										{ name:"+ Alarm History320"	, url:"#"},
+										{ name:"+ Event History321"	, url:"#" , depth:[
+										      										{ name:"++ Alarm History3210"	, url:"#"},
+										    										{ name:"++ Event History3211"	, url:"#"}]
+										},
+										{ name:"+ Alarm History322"	, url:"#"}]
+							},
+							{ name:"- Event Management33"				, url:"#"},
+							{ name:"- Dispatching Rule Management34"	, url:"#"}]
+	 			},
+				{name:"Admin", url:"#"
+	 				,depth:[
+							{ name:"- User Management"		, url:"#"},
+							{ name:"- Menu Management"		, url:"#"},
+							{ name:"- Other Settings"		, url:"#"},
+							{ name:"- Log Management"		, url:"#"}]
+				}];
+		
+		
+		$('#gnb').jGnb({
+			easing       : 'none',
+			duration     : 1000,
+	        anchor       : 'li a',
+	        exception    : null,
+	        activeclass  : 'active',
+	        wrapper      : null,
+	        bindingwindow: true ,
+	        correction   : null , 
+	        
+		} );
+		
+		
+		$('#gnb').jGnb.setData ( menuList );
+		
+		
+		
+		
+		//console.log ( 'gnb' , $('#gnb'))
+		//console.log ( $("#test"));
+		
+    	//memory - property
+    	
+		
+		//-- memory prop
+ 	  		//jsHeapSizeLimit
+   			//totalJSHeapSize
+	   		//usedJSHeapSize
+	   		
+		//.log (performance)
+		
+		//console.log ( performance.memory ) 
+		
+		$("#test").append ( '<div></div>')
+		
+		/* setInterval ( testInterval , 100 ); */
+		var wrapper = document.querySelector(".wrapper");
+		
+		performance.mark ( 'wrapper');
+		
+		//console.log ( performance.mark.name );
+		
+		function testInterval()
+		{
+    		var newDiv = document.createElement ( 'div');
+    		newDiv.style.zIndex = "-1";
+            newDiv.id = "item";
+
+            wrapper.appendChild(newDiv);
+            
+    		//console.log ( performance.memory )	
+    		//console.log ( performance.memory , " : " , window.performance.memory )	
+		}
+		
+		var lastUsedHeap = 0;  // remember the heap size
+
+		var activeBullets = [];
+		var bulletPool = [];
+
+		// construct some bullets ready for use
+		//for (var i=0; i < 20; i++)
+		    //bulletPool.push( new Bullet() );
+
+		// a constructor/factory function
+		function getNewBullet()
+		{
+		    var b = null;
+
+		    // check to see if there is a spare one
+		    if (bulletPool.length > 0)
+		        b = bulletPool.pop();
+		    else 
+		        // none left, construct a new one
+		        b = new Bullet();	
+
+		    // move the new bullet to the active array
+		    activeBullets.push(b);
+		    return b;
+		}
+
+		function freeBullet(b)
+		{
+		    // find the active bullet and remove it
+		    // NOTE: Not using indexOf since it wont work in IE8 and below
+		    for (var i=0, l=activeBullets.length; i < l; i++)
+		        if (activeBullets[i] == b)
+		            array.slice(i, 1);
+			
+		    // return the bullet back into the pool
+		    bulletPool.push(b);
+		}
+		
+function checkMemory()
+{
+    // check if the heap size is this cycle is LESS than what we had last
+    // cycle; if so, then the garbage collector has kicked in
+//console.log ( 'a')
+    //if (window.performance.memory.usedJSHeapSize < lastUsedHeap)
+        //console.log('Garbage collected!');
+    //lastUsedHeap = window.performance.memory.usedJSHeapSize;
+    //console.log ( lastUsedHeap );
+}
+
+setTimeout(checkMemory, 100); // test 10 times per second 
+		
+		function debugMemory()
+    	{
+    		var setInit = function()
+    		{
+    			//console.log ( 'init')
+    		}
+    		//console.log ( this )
+		}
+		
+    	debugMemory.prototype.setInit = function()
+    	{
+    		
+    	}
+    	
+		
+    	//var memory = new debugMemory();
+    	//console.log ( "test : " , debugMemory().setinit() );
+    	//console.log ( memory );
+		
+    });
+	</script>
+</head>
+<body>
+
+<section class="guide_page">
+	<!--  -->
+	<div id='gnb'></div>
+	<!--  -->
+	<!-- <div class="testMe">testA</div> -->
+	<div class="wrapper"></div>
+	<!-- <div class="guide_header">
+		<h1></h1>
+	</div> -->
+	
+	
+	<!-- container S -->
+	<article class="container">
+    	<!-- contents S -->
+		<div class="contents">
+		<div id="test"></div>
+		<h2></h2>
+		
+		<hr class="guide_line" />
+	</article>
+   <!--// container E -->
+
+</section>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scene Connector</title>
+	<link type="text/css" rel="stylesheet" href="../comm/css/common.css" />
+	<link type="text/css" rel="stylesheet" href="../comm/css/style.css" />
+	<link type="text/css" rel="stylesheet" href="../comm/css/jquery.mCustomScrollbar.css" />	
+	<script type="text/javascript" src="../lib/js/jquery/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="../comm/js/SceneConnector.js"></script>
+	<script type="text/javascript" src="../comm/js/jquery.mCustomScrollbar.js"></script>
+	<script type="text/javascript" src="../comm/js/jquery.mCustomScrollbar.concat.min.js"></script>
+		<style>		
+		/* .list-box {position:relative;} */
+		</style>		
+    <script>
+    $( document ).ready(function()
+    {
+    	var data = [
+    	            {tagData:"left , right , top" 	, title:"NO.051 Walking Right to Left" , discrition:"(title, Description)" , imgUrl:["../img/img01.gif", "../img/img02.gif","../img/img01.gif", "../img/img02.gif"]},
+    	            {tagData:"left" 				, title:"NO.052 Walking Right to Left" , discrition:"(title, Description)" , imgUrl:["../img/img01.gif", "../img/img02.gif"]},
+    	            {tagData:"left" 				, title:"NO.053 Walking Right to Left" , discrition:"(title, Description)" , imgUrl:["../img/img01.gif", "../img/img02.gif"]},
+    	            {tagData:"left , right , top" 	, title:"NO.054 Walking Right to Left" , discrition:"(title, Description)" , imgUrl:["../img/img01.gif", "../img/img02.gif"]},
+    	            {tagData:"right" 				, title:"NO.055 Walking Right to Left" , discrition:"(title, Description)" , imgUrl:["../img/img01.gif", "../img/img02.gif"]},
+    	            {tagData:"right" 				, title:"NO.056 Walking Right to Left" , discrition:"(title, Description)" , imgUrl:["../img/img01.gif", "../img/img02.gif"]},
+    	            {tagData:"left , right , top" 	, title:"NO.057 Walking Right to Left" , discrition:"(title, Descri<br>ption)" , imgUrl:["../img/img01.gif", "../img/img02.gif"]},
+    	            {tagData:"right , top" 			, title:"NO.058 Walking Right to Left" , discrition:"(title, Descri<br>ption)" , imgUrl:["../img/img01.gif", "../img/img02.gif"]},
+    	            {tagData:"top" 					, title:"NO.059 Walking Right to Left" , discrition:"(title, Descri<br>ption)" , imgUrl:["../img/img01.gif", "../img/img02.gif"]},
+    	            {tagData:"top" 					, title:"NO.060 Walking Right to Left" , discrition:"(title, Descri<br>ption)" , imgUrl:["../img/img01.gif", "../img/img02.gif"]},
+    	            {tagData:"bottom , right , top" , title:"NO.061 Walking Right to Left" , discrition:"(title, Descri<br>ption)" , imgUrl:["../img/img01.gif", "../img/img02.gif"]},
+    	            {tagData:"bottom" 				, title:"NO.062 Walking Right to Left" , discrition:"(title, Descri<br>ption)" , imgUrl:["../img/img01.gif", "../img/img02.gif"]},
+    	            {tagData:"bottom" 				, title:"NO.063 Walking Right to Left" , discrition:"(title, Descri<br>ption)" , imgUrl:["../img/img01.gif", "../img/img02.gif"]},
+    				]
+    	/*
+    	* scene.serchList("ALL")
+    	* ALL : 전체 검색
+    	* scene.serchList("data.tagData") //검색 되는 테그이름
+    	*/
+    	
+    	var scene = new SceneConnector(data);
+    	scene.serchList("ALL");
+    	//li 클릭시 이벤트
+    	$(".div-fixed ul").on('click' , function ( e )
+       	{
+     		switch ($(e.target).parent().index() )
+     		{
+     			case 0:
+     				scene.serchList("left");    					
+  				break;  					
+     			case 1:
+     				scene.serchList("right");
+        		break;
+     			case 2:
+     				scene.serchList("bottom")
+        		break;
+     			case 3:
+     				scene.serchList("top")
+        		break;         			
+     			case 4:
+     				scene.serchList("ALL")
+             	break;
+     		}
+  		});
+    });
+	</script>
+</head>
+<body>
+
+<section>
+	<div class="wrapper">	
+	<!-- container S -->
+	<article class="container">
+    	<!-- contents S -->
+		<div class="contents">
+			<div class="title-box">
+				<div class="div-fixed">
+					<div>Scene Connector</div>
+					<p>email@email.com</p>
+					<ul>
+						<li><a href="#">Left</a></li>
+						<li><a href="#">Right</a></li>
+						<li><a href="#">Bottom</a></li>
+						<li><a href="#">Top</a></li>
+						<li><a href="#">ALL</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="list-box"></div>
+		</div>
+
+	</article>	
+	<!--// container E -->
+   </div>
+
+</section>
+</body>
+</html>

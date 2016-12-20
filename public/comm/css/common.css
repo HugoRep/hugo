@@ -1,0 +1,140 @@
+@charset 'utf-8';
+
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {margin:0; padding:0; border:0; font-family:Dotum , "돋움" , Arial, Helvetica, sans-serif;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display:block;}
+blockquote, q {quotes:none;}
+blockquote:before, blockquote:after, q:before, q:after {content:''; content:none;}
+table {border-collapse:collapse; border-spacing:0;}
+html,body {width:100%; height:100%;}
+img {border:0; vertical-align:top;}
+select, input, img, li {vertical-align:middle; text-align:left;}
+ul,li,ol {list-style:none;}
+li {float:left;}
+legend, caption, summary {display:none;}
+hr {border-collapse:collapse; display:none;}
+textarea {resize:none;}
+i {font-style:normal;}
+pre {display:block; width:100%; float:left; white-space:pre-wrap;}
+em {font-style:normal;display:inline-block;}
+select {-webkit-appearance:none; -moz-appearance:none; -o-appearance:none; appearance:none;}
+
+
+
+/**/
+html {-webkit-font-smoothing: antialiased; font-size:12px; }
+input {padding:6px 5px 4px; border:solid 1px #ccc; width:100%; box-sizing:border-box;}
+input:focus,select:focus,textarea:focus {outline:none;}
+textarea:focus,
+input:focus {border:solid 1px #ccc;}
+.fl_l {float:left !important;}
+.fl_r {float:right !important;}
+.txt_l {text-align:left !important;}
+.txt_r {text-align:right !important;}
+.none {display:none;}
+.blind {position:absolute; top:-9999px; left:-9999px; visibility:hidden; width:0; height:0; overflow:hidden;}
+.anchor {display:block; position:relative; visibility:visible; width:0; height:0; overflow:hidden;}
+.ellipsis {white-space:nowrap; display:block; text-overflow:ellipsis; overflow:hidden;}
+.clearfix:after {content:"."; display:block; height:0; clear:both; visibility:hidden;} 
+.clearfix {display:inline-block; }
+*html .clearfix {height:1%;} 
+
+/* link */
+/* a {color:#333; text-decoration:none}
+a:link {color:#333; text-decoration:none} 
+a:visited {color:#333; text-decoration:none} 
+a:active {color:#333; text-decoration:none} 
+a:hover {color:#333; text-decoration:none} */
+
+/*design_checkbox*/
+.design_checkbox .lbtxt {margin-right:13px;}
+.design_checkbox .lbtxt:not(#cssbrowser)>input[type="checkbox"] + label {padding:1px 0 0 25px; line-height:18px !important; height:18px !important; } /*label에 text있을때*/
+.design_checkbox .ipst {position:relative; display:inline-block;  float:left; margin-right:16px; }
+.design_checkbox .ipstc {position:relative; display:inline-block; vertical-align:middle;}
+.design_checkbox .ipst>input[type="radio"],
+.design_checkbox .ipstc>input[type="checkbox"] {position:relative; top:-1px; vertical-align:middle;}
+.design_checkbox .ipst:not(#cssbrowser)>input[type="radio"],
+.design_checkbox .ipstc:not(#cssbrowser)>input[type="checkbox"] { position:absolute; left:0; top:0; width:18px; height:18px; margin:0; opacity:0; cursor:pointer;}
+.design_checkbox .ipst:not(#cssbrowser)>input[type="radio"] + label {margin:0 0 0 0; padding:1px 0 2px 25px; display:inline-block; background:url('../comm/img/ecp/radiobox.png') no-repeat left top; width:100%; height:18px; line-height:18px; display:block; box-sizing:border-box;}
+.design_checkbox .ipstc:not(#cssbrowser)>input[type="checkbox"] + label {margin:0 0 0 0; padding:0px 0 0 17px; display:inline-block; background:url('../comm/img/ecp/radiobox.png') no-repeat left top; width:100%; height:17px; display:block; box-sizing:border-box;}
+.design_checkbox .ipst:not(#cssbrowser)>input[type="radio"] + label{ background-position:left -31px; }
+.design_checkbox .ipst:not(#cssbrowser)>input[type="radio"]:checked + label { background-position:left -0px; }
+.design_checkbox .ipst:not(#cssbrowser)>input[type="radio"]:checked:hover + label { background-position:left -0px; }
+.design_checkbox .ipst:not(#cssbrowser)>input[type="radio"]:hover + label { background-position:left -275px; }
+.design_checkbox .ipst:not(#cssbrowser)>input[type="radio"]:disabled + label { background-position:left -372px; }
+.design_checkbox .ipst:not(#cssbrowser)>input[type="radio"]:disabled:checked + label { background-position:left -372px; }
+.design_checkbox .ipst:not(#cssbrowser)>input[type="radio"]:disabled:checked:hover + label { background-position:left -372px; }
+.design_checkbox .ipstc:not(#cssbrowser)>input[type="checkbox"] + label { background-position:left -78px; }
+.design_checkbox .ipstc:not(#cssbrowser)>input[type="checkbox"]:checked + label { background-position:left -115px; }
+.design_checkbox .ipstc:not(#cssbrowser)>input[type="checkbox"]:hover + label { background-position:left -150px; }
+.design_checkbox .ipstc:not(#cssbrowser)>input[type="checkbox"]:disabled + label { background-position:left -191px; }
+.design_checkbox .ipstc:not(#cssbrowser)>input[type="checkbox"]:disabled:checked + label { background-position:left -233px; }
+.design_checkbox .ipstc:not(#cssbrowser)>input[type="checkbox"]:disabled:checked:hover + label { background-position:left -233px; }
+.design_checkbox .ipstc:not(#cssbrowser)>input[type="checkbox"]:checked:hover + label {  background-position:left -115px; }
+
+/*magin*/
+.mg_t03 {margin-top:3px !important;}
+.mg_t05 {margin-top:5px !important;}
+.mg_t10 {margin-top:10px !important;}
+.mg_t15 {margin-top:15px !important;}
+.mg_t20 {margin-top:20px !important;}
+.mg_t25 {margin-top:25px !important;}
+.mg_t30 {margin-top:30px !important;}
+.mg_b05 {margin-bottom:5px !important;}
+.mg_b10 {margin-bottom:10px !important;}
+.mg_b15 {margin-bottom:15px !important;}
+.mg_b20 {margin-bottom:20px !important;}
+.mg_b25 {margin-bottom:25px !important;}
+.mg_b30 {margin-bottom:30px !important;}
+.mg_l05 {margin-left:5px !important;}
+.mg_l10 {margin-left:10px !important;}
+.mg_l15 {margin-left:15px !important;}
+.mg_l20 {margin-left:20px !important;}
+.mg_l25 {margin-left:25px !important;}
+.mg_l30 {margin-left:30px !important;}
+.mg_r05 {margin-right:5px !important;}
+.mg_r10 {margin-right:10px !important;}
+.mg_r15 {margin-right:15px !important;}
+.mg_r20 {margin-right:20px !important;}
+.mg_r25 {margin-right:25px !important;}
+.mg_r30 {margin-right:30px !important;}
+/*padding*/
+.pd_t05 {padding-top:5px !important;}
+.pd_t10 {padding-top:10px !important;}
+.pd_t15 {padding-top:15px !important;}
+.pd_t20 {padding-top:20px !important;}
+.pd_t25 {padding-top:25px !important;}
+.pd_t30 {padding-top:30px !important;}
+.pd_b05 {padding-bottom:5px !important;}
+.pd_b10 {padding-bottom:10px !important;}
+.pd_b15 {padding-bottom:15px !important;}
+.pd_b20 {padding-bottom:20px !important;}
+.pd_b25 {padding-bottom:25px !important;}
+.pd_b30 {padding-bottom:30px !important;}
+.pd_l05 {padding-left:5px !important;}
+.pd_l10 {padding-left:10px !important;}
+.pd_l15 {padding-left:15px !important;}
+.pd_l20 {padding-left:20px !important;}
+.pd_l25 {padding-left:25px !important;}
+.pd_l30 {padding-left:30px !important;}
+.pd_r05 {padding-right:5px !important;}
+.pd_r10 {padding-right:10px !important;}
+.pd_r15 {padding-right:15px !important;}
+.pd_r20 {padding-right:20px !important;}
+.pd_r25 {padding-right:25px !important;}
+.pd_r30 {padding-right:30px !important;}
+
+
+/* button */
+.tp_btn {float:left; border-left:solid 1px #dbdbdb; margin-top:6px; }
+.tp_btn a {display:inline-block; min-width:46px; border-top:solid 1px #dbdbdb; border-bottom:solid 1px #dbdbdb; border-right:solid 1px #dbdbdb; padding:5px 10px 5px 10px; box-sizing:border-box; float:left; text-align:center; background:#fff; color:#989db3;}
+_:-ms-input-placeholder, :root .tp_btn a {padding:6px 8px 3px 8px;}
+_:-ms-fullscreen, :root .tp_btn a {padding:6px 8px 3px 8px;}
+.tp_btn a.disable {color:#c1c1c1; cursor:default !important;}
+.tp_btn a.disable:hover,
+.tp_btn a.disable.active {background:#fff; color:#c1c1c1;}
+.tp_btn a.disable.active:hover {background:#fff; color:#c1c1c1; border-top:solid 1px #3654ac; border-bottom:solid 1px #3654ac;}
+.tp_btn a.disable.active {border-top:solid 1px #3654ac; border-bottom:solid 1px #3654ac; border-right:solid 1px #3654ac;}
+.tp_btn a.active {border-right:solid 1px #3654ac;}
+.tp_btn a.active,
+.tp_btn a.active:hover {background:#546fc6; color:#fff; border-top:solid 1px #3654ac; border-bottom:solid 1px #3654ac;}
+
